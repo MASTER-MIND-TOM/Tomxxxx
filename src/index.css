@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-brand: "Orbitron", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-background: hsl(240 15% 4%);
+  --color-foreground: hsl(45 20% 90%);
+  --color-card: hsl(240 12% 8%);
+  --color-card-foreground: hsl(45 20% 90%);
+  --color-popover: hsl(240 12% 8%);
+  --color-popover-foreground: hsl(45 20% 90%);
+  --color-primary: hsl(45 100% 50%);
+  --color-primary-foreground: hsl(240 15% 4%);
+  --color-secondary: hsl(30 100% 55%);
+  --color-secondary-foreground: hsl(240 15% 4%);
+  --color-muted: hsl(240 10% 15%);
+  --color-muted-foreground: hsl(240 8% 45%);
+  --color-accent: hsl(160 80% 45%);
+  --color-accent-foreground: hsl(240 15% 4%);
+  --color-destructive: hsl(0 75% 55%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+  --color-border: hsl(45 30% 18%);
+  --color-input: hsl(240 10% 12%);
+  --color-ring: hsl(45 100% 50%);
+
+  --radius-lg: 0.75rem;
+  --radius-md: calc(0.75rem - 2px);
+  --radius-sm: calc(0.75rem - 4px);
+
+  --animate-grid-move: grid-move 30s linear infinite;
+  --animate-gold-pulse: gold-pulse 3s ease-in-out infinite;
+  --animate-signal-pulse: signal-pulse 2s ease-in-out infinite;
+  --animate-loader-bar: loader-bar 1.5s ease infinite;
+  --animate-toast-in: toast-in .3s ease;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.3s ease-out;
+  --animate-ring-glow: ring-glow 3s ease-in-out infinite;
+
+  @keyframes grid-move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(60px); }
+  }
+  @keyframes gold-pulse {
+    0%, 100% { box-shadow: 0 0 15px hsla(45, 100%, 50%, 0.3), 0 0 30px hsla(45, 100%, 50%, 0.1); }
+    50% { box-shadow: 0 0 25px hsla(45, 100%, 50%, 0.5), 0 0 50px hsla(45, 100%, 50%, 0.2), 0 0 80px hsla(45, 100%, 50%, 0.08); }
+  }
+  @keyframes signal-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.92; transform: scale(1.015); }
+  }
+  @keyframes loader-bar {
+    0% { width: 0%; margin-left: 0; }
+    50% { width: 70%; margin-left: 15%; }
+    100% { width: 0%; margin-left: 100%; }
+  }
+  @keyframes toast-in {
+    0% { opacity: 0; transform: translateY(-10px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(16px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slide-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes ring-glow {
+    0%, 100% { filter: drop-shadow(0 0 4px hsla(45, 100%, 50%, 0.3)); }
+    50% { filter: drop-shadow(0 0 14px hsla(45, 100%, 50%, 0.5)); }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+.font-brand { font-family: var(--font-brand); }
+.font-mono { font-family: var(--font-mono); }
+
